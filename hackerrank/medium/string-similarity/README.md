@@ -31,7 +31,7 @@ Output *t* lines, each containing the answer for the corresponding test case.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-10T06:14:25.785Z  
+**Submitted:** 2026-09-10T06:21:35.496Z  
 
 ```java
 import java.io.*;
@@ -44,8 +44,11 @@ public class Solution {
         int[] z = new int[n];
 
         z[0] = n;
-        int left = 0, right = 0;
-        long answer = n;
+
+        int left = 0;
+        int right = 0;
+
+        long sum = n;
 
         for (int i = 1; i < n; i++) {
 
@@ -63,10 +66,10 @@ public class Solution {
                 right = i + z[i] - 1;
             }
 
-            answer += z[i];
+            sum += z[i];
         }
 
-        return answer;
+        return sum;
     }
 
     public static void main(String[] args) {
